@@ -6,7 +6,8 @@ const Getter = () => {
     const [rId, setRId] = useState(0);
     const [aRemark, setARemark] = useState("");
     const [rRemark, setRRemark] = useState("");
-    const { contract } = useContract("0x60baC4b64e41CfE297234B3Ceee3263A96c64693");
+    const { contract } = useContract(process.env.NEXT_PUBLIC_SMART_CONTRACT);
+    // const { contract } = useContract("0x60baC4b64e41CfE297234B3Ceee3263A96c64693");
     const { data: nextId } = useContractRead(contract, "nextId")
     const { data: pendingApprovals } = useContractRead(contract, "pendingApprovals", 0)
     const { data: pendingResolutions } = useContractRead(contract, "pendingResolutions", 0)

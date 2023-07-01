@@ -3,7 +3,8 @@ import { useContract, useContractRead } from "@thirdweb-dev/react";
 
 const Status = () => {
     const [id, setId] = useState(0);
-    const { contract } = useContract("0x60baC4b64e41CfE297234B3Ceee3263A96c64693");
+    const { contract } = useContract(process.env.NEXT_PUBLIC_SMART_CONTRACT);
+    // const { contract } = useContract("0x60baC4b64e41CfE297234B3Ceee3263A96c64693");
     const { data: Complaints } = useContractRead(contract, "Complaints", id)
     return (
         <div className='status-container'>

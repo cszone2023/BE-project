@@ -11,7 +11,8 @@ const Complaint = () => {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
 
-    const { contract } = useContract("0x60baC4b64e41CfE297234B3Ceee3263A96c64693");
+    const { contract } = useContract(process.env.NEXT_PUBLIC_SMART_CONTRACT);
+    // const { contract } = useContract("0x60baC4b64e41CfE297234B3Ceee3263A96c64693");
     const { data: nextId } = useContractRead(contract, "nextId")
     const { mutateAsync: fileComplaint } = useContractWrite(contract, "fileComplaint");
     console.log("contract instance:", contract);
